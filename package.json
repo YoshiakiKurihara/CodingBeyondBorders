@@ -1,0 +1,40 @@
+{
+  "name": "softwareengineerpilot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "@notionhq/client": "^2.3.0",
+    "bootstrap": "^5.3.5",
+    "next": "15.3.1",
+    "nodemailer": "^6.10.1",
+    "notion-client": "^7.3.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.1",
+    "react-medium-image-zoom": "^5.2.14",
+    "react-notion-x": "^7.3.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@pandacss/dev": "^0.53.4",
+    "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "typescript": "^5"
+  }
+}
