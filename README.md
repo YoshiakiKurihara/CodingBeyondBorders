@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# このリポジトリについて
+このWebサイトは、Next.jsで作成したYoshi Kuriharaのポートフォリオサイトです。動作は、基本的なコマンドで動作します。聖杯レイアウト導入によりコンポーネント分け、日本語、英語の切り替え、Notion CMSからのブログ形式での情報表示、問い合わせフォーム、現在活動しているアプリ開発についての情報を追加しています。
+
+# About this repository
+This website is the portfolio of Yoshi Kurihara, built with Next.js. It operates using basic commands and adopts a Holy Grail layout for structured component separation. The site supports both Japanese and English language switching, displays blog-style content fetched from Notion CMS, and includes a contact form. It also provides information about current app development activities.
 
 ## Getting Started
 
