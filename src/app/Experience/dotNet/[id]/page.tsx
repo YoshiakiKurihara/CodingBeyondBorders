@@ -2,10 +2,8 @@ import { getBlogDetails } from '@/app/lib/notion-renderer'
 
 // ページコンポーネント
 export default async function Experience_Items_dotNet({ params }: { params: { id: string } }) {
-  return (
-    getBlogDetails({ params } as { params: { id: string } } ) // propsを渡す
-  )
+  const content = await getBlogDetails(params.id);
+  return content;
 }
 
-// ISR設定 (5分ごと再生成)
-export const revalidate = 15
+export const revalidate = 30 // 0.5分（秒で指定）

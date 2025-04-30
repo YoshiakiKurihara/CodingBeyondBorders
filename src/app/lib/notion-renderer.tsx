@@ -120,8 +120,8 @@ async function getBlogPostsInfo(databaseId: string): Promise<BlogPost[]> {
     
 }
 
-export async function getBlogDetails({ params }: { params: { id: string } }) {
-    const { id } = await params;
+export async function getBlogDetails(id: string) {
+    // const { id } = params; // await は不要
     
     const page = await getPage(id);
 
@@ -129,7 +129,7 @@ export async function getBlogDetails({ params }: { params: { id: string } }) {
         notFound()
     }
 
-    const blocks = await getBlocks(params.id)
+    const blocks = await getBlocks(id)
 
     const property = page.properties["title"];
 
