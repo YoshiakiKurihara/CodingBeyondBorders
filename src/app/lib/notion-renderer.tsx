@@ -250,8 +250,10 @@ return (
 
         case 'image':
             let url = '';
-            let imageWidth = 150; // デフォルトの幅
-            let imageHeight = 100; // デフォルトの高さ
+            const imageWidth = 150; // デフォルトの幅
+            const imageHeight = 100; // デフォルトの高さ
+            // //let imageWidth = 150; // デフォルトの幅
+            //let imageHeight = 100; // デフォルトの高さ
             const caption = block.image.caption?.[0]?.plain_text || 'Image';
 
             if (block.image.type === 'external') {
@@ -261,8 +263,8 @@ return (
             // 'file'タイプの画像の場合
             url = block.image.file.url;
             // 画像のサイズ（もしあれば）を取得
-            imageWidth = block.image.file.width || imageWidth;
-            imageHeight = block.image.file.height || imageHeight;
+            //imageWidth = block.image.file.width || imageWidth;
+            //imageHeight = block.image.file.height || imageHeight;
             }
 
             console.log('Image :', block.image);
