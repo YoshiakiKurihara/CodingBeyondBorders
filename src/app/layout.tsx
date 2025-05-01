@@ -50,7 +50,7 @@ export default function RootLayout({
 
               {/* Right Sidebar */}
               {/* 同じくモバイル対応 */}
-              <aside className={css({ width: '250px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
+              <aside className={css({ width: '150px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
                 <RightSidebar />
               </aside>
             </div>

@@ -26,7 +26,6 @@ type MenuItemType = {
 
 const menuItems: MenuItemType[] = [
     { label: 'Home', children: [{ label: 'Home', path: '/' }] },
-    { label: 'About', children: [{ label: 'About', path: '/About' }] },
     { label: 'Experience', children: [{ label: 'Python', path: '/Experience/Python' },
                                     { label: 'Next.js', path: '/Experience/NextJs' },
                                     { label: 'React Native', path: '/Experience/ReactNative' },
@@ -111,6 +110,7 @@ const Header = () => {
                                 color="inherit"
                                 aria-label="menu"
                                 onClick={handleOpenNavMenu}
+                                sx={{fontSize: '10px'}}
                             >
                                 <MenuIcon />
                             </IconButton>
@@ -120,6 +120,7 @@ const Header = () => {
                                 onClose={handleCloseNavMenu}
                                 anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                                sx={{fontSize: '10px'}}
                             >
                                 {menuItems.map((item) => (
                                 <MenuItem
@@ -128,7 +129,7 @@ const Header = () => {
                                         handleCloseNavMenu();
                                         handleOpenSubMenu(e, item.children);
                                     }}
-                                    sx={{ fontSize: '12px' }}>
+                                    sx={{ fontSize: '10px' }}>
                                     {item.label}
                                 </MenuItem>
                                 ))}
@@ -136,12 +137,12 @@ const Header = () => {
                         </Box>
 
                         {/* PC向け横並びボタン */}
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, padding : '0' }}>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, fontSize: 'md', padding : '0' }}>
                             {menuItems.map((item) => (
                                 <Button
                                 key={item.label}
                                 onClick={(e) => handleOpenSubMenu(e, item.children)}
-                                sx={{ color: 'white', display: 'block', fontSize: '14px', marginLeft: '10px', }}
+                                sx={{ color: 'white', display: 'block', fontSize: '10px', marginLeft: '10px', }}
                                 >
                                 {item.label}
                                 </Button>
@@ -157,7 +158,7 @@ const Header = () => {
                             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                             >
                             {subMenuItems.map((subItem) => (
-                                <MenuItem key={subItem.label} onClick={() => handleSubMenuClick(subItem.path)} sx={{ fontSize: '12px' }}>
+                                <MenuItem key={subItem.label} onClick={() => handleSubMenuClick(subItem.path)} sx={{ fontSize: '10px' }}>
                                 {subItem.label}
                                 </MenuItem>
                             ))}
