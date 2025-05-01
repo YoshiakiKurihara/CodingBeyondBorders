@@ -100,6 +100,8 @@ export async function fetchLatestItemsFromDB(databaseId: string, limit: number =
             }));
 }
 
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms))
+
 export async function fetchAllLatestItems(): Promise<FetchedPage[]> {
     const dbIds = [
         process.env.NOTION_EXP_PYTHON_DATABASE_ID!,
@@ -119,11 +121,19 @@ export async function fetchAllLatestItems(): Promise<FetchedPage[]> {
         process.env.NOTION_DISC_REACTTAURI_DATABASE_ID!,
     ];
 
-    const allItems = await Promise.all(dbIds.map((id) => fetchLatestItemsFromDB(id, 5)));
+    const allItems: FetchedPage[] = [];
 
-    const merged = allItems.flat();
+    for (const id of dbIds) {
+        try {
+            const items = await fetchLatestItemsFromDB(id, 5);
+            allItems.push(...items);
+        } catch (error) {
+            console.error(`Error fetching from DB ${id}`, error);
+        }
+        await delay(500); // 0.5秒待機
+    }
 
-    return merged.sort((a, b) =>
+    return allItems.sort((a, b) =>
         new Date(b.lastEdited).getTime() - new Date(a.lastEdited).getTime()
     ).slice(0, 5);
 }
