@@ -1,5 +1,6 @@
 // import Image from "next/image";
-import Image from 'next/image';
+import Image from 'next/image'
+import Link from 'next/link';
 import { css } from   '../../styled-system/css';
 
 export default function Home() {
@@ -21,6 +22,14 @@ export default function Home() {
               <p className="font-bold">アイデアをカタチに、国境を越えて。</p>
               <p className="text-gray.600">C#/.NET に強いフリーランス開発者、メルボルン拠点</p>
           </div>
+          <div className={css({ display: 'flex', flexDirection: 'row', alignItems: 'center', })}>
+                    <Link href="https://www.linkedin.com/in/yoshiakikurihara/" target="_blank" rel="noopener noreferrer">
+                        <Image src="/images/LI-In-Bug.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="LinkedIn" className={css({ margin: '2', })} />
+                    </Link>
+                    <Link href="https://github.com/YoshiakiKurihara" target="_blank" rel="noopener noreferrer">
+                        <Image src="/images/github-mark-white.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="GitHub" className={css({ margin: '2', })} />
+                    </Link>{/* <Image src="/images/logo-white.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="X-Twitter" className={css({ margin: '2', })} /> */}
+                </div>
         </div>
       </div>
     </div>

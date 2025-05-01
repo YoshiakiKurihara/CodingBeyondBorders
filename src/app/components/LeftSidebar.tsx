@@ -39,8 +39,9 @@ function LeftSidebar({ items }: { items: FetchedPage[] }) {
                     <Link href="https://www.linkedin.com/in/yoshiakikurihara/" target="_blank" rel="noopener noreferrer">
                         <Image src="/images/LI-In-Bug.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="LinkedIn" className={css({ margin: '2', })} />
                     </Link>
-                    <Image src="/images/github-mark-white.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="GitHub" className={css({ margin: '2', })} />
-                    {/* <Image src="/images/logo-white.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="X-Twitter" className={css({ margin: '2', })} /> */}
+                    <Link href="https://github.com/YoshiakiKurihara" target="_blank" rel="noopener noreferrer">
+                        <Image src="/images/github-mark-white.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="GitHub" className={css({ margin: '2', })} />
+                    </Link>{/* <Image src="/images/logo-white.png" width={30} height={0} style={{ width: 'auto', height: 'auto' }} alt="X-Twitter" className={css({ margin: '2', })} /> */}
                 </div>
                 <div className={css({ textAlign: 'left', padding: '5px', fontSize: 'xs', })}>
                     <p>
