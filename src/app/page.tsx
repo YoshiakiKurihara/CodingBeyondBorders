@@ -82,8 +82,8 @@ export default function Home() {
           <h2 className={css({fontWeight: 'bold',})}>職務経歴</h2>
           <ul className="list-disc pl-5 text-gray.700 space-y-2">
           <li>現在、オーストラリア メルボルンでフリーランス活動中 (2024〜)</li>
-          <li>某人財派遣会社様経由 某大学様 購買管理システム : VB6 → VB.NET移行(2011)</li>
-          <li>某SIer会社正社員勤務:運行管理システム開発(2001-2009)</li>
+          <li>某人財派遣会社(2011)</li>
+          <li>某SIer会社正社員勤務(2001-2009)</li>
           </ul>
         </div>
       </div>
