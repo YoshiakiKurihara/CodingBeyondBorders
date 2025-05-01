@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { css } from   '../../styled-system/css';
 import Header from './components/Header'
-import LeftSidebar from './components/LeftSidebar'
+import LeftSidebarWrapper from './components/LeftSidebarWrapper'
 import RightSidebar from './components/RightSidebar'
 import Footer from './components/Footer'
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -23,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={`${inter.variable}`}>
@@ -39,9 +40,9 @@ export default function RootLayout({
               {/* Left Sidebar */}
               {/* モバイル対応を考えて非表示スタートでもOK */}
               <aside className={css({width: '250px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
-                <LeftSidebar />
+                <LeftSidebarWrapper />
               </aside>
-
+              
               {/* Main Content */}
               <main className={css({flex: '1', bg: 'slate.200', p: 4,})}>
                 {children}
@@ -49,7 +50,7 @@ export default function RootLayout({
 
               {/* Right Sidebar */}
               {/* 同じくモバイル対応 */}
-              <aside className={css({ width: '100px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
+              <aside className={css({ width: '250px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
                 <RightSidebar />
               </aside>
             </div>

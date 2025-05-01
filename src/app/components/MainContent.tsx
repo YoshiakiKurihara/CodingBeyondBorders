@@ -1,3 +1,5 @@
 export default function MainContent() {
-    return <h1>My Portfolio</h1>
+    return(
+      <h1>My Portfolio</h1>
+    );
   }
