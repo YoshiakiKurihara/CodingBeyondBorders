@@ -22,4 +22,10 @@ export const MessageText = {
     PORTFOLIO_INTRO_EN : 'G\'day, I moved to Australia in 2008 and currently reside in Melbourne, Victoria. In Japan, I worked for a major systems integrator, focusing on production technology and system development. Back then, I primarily worked with .NET technologies. Since then, I’ve broadened my skill set to include web scraping with Python, web application development with React and Next.js, mobile app development with React Native, and desktop application development using Tauri. I can support a wide range of development needs across web, mobile, and desktop platforms. Please feel free to reach out if you have any inquiries or project ideas!',
     PORTFOLIO_SUBTITLE_JP : 'コーディングは国境を越え、あなたのアイデアやビジネスを実現します。',
     PORTFOLIO_SUBTITLE_EN : 'Bringing Your Ideas and Ambitions to Life — Anywhere in the World',
+    LATEST_JP : '最新の5件',
+    LATEST_EN : 'Latest 5 Updates',
+    UPDATE_JP : '更新',
+    UPDATE_EN : 'Update',
+    ARTICLE_JP : '記事', 
+    ARTICLE_EN : 'Article',
 }

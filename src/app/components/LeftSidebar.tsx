@@ -10,7 +10,7 @@ import Zoom from 'react-medium-image-zoom'
 import { css } from   '../../../styled-system/css';
 // Custom Components/Libraries
 import { useLanguage } from '../contexts/LanguageContext';
-import {MessageText} from './messages/Messages';
+import {　MessageText} from './messages/Messages';
 import { FetchedPage } from '@/app/lib/notion-api'
 
 
@@ -52,14 +52,14 @@ function LeftSidebar({ items }: { items: FetchedPage[] }) {
     }else {
         return (
             <div>
-                <h2 className={css({ m:2 })}>最新の5件</h2>
+                <h2 className={css({ m:2 })}>{state.language === 'ja' ? MessageText.LATEST_JP : MessageText.LATEST_EN}</h2>
                 <ul className="space-y-2">
                     {items.map((item) => (
                     <li key={item.id} className={css({fontSize: 'xs', m:0, p:2, border: '0.5px solid', borderColor: 'gray.300', borderRadius: 'md',})}>
                         <span className="font-semibold">{item.title}</span>
                         <br />
                         <span className="text-sm text-gray-500">
-                        更新: {new Date(item.lastEdited).toLocaleString()} / 記事: {item.description}...
+                        {state.language === 'ja' ? MessageText.UPDATE_JP : MessageText.UPDATE_EN}: {new Date(item.lastEdited).toLocaleString()}/{state.language === 'ja' ? MessageText.ARTICLE_JP : MessageText.ARTICLE_EN}: {item.description}...
                         </span>
                     </li>
                     ))}
