@@ -79,6 +79,10 @@
     background: #d9eaff;
 }
 
+.current-project-tech-list > li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
 .current-project-title{
     font-size: medium;
     font-weight: bold; /* 太字を解除 */

@@ -130,13 +130,17 @@ export const experiences: Experience[] = [
     },
     {
         period: '2011〜2011',
-        companyJa: '某人財派遣会社',
-        descriptionJa: '某大学様 購買管理システム : VB6 → VB.NET移行'
+        companyJa: '派遣社員',
+        companyEn: 'Contract Software Engineer',
+        descriptionJa: '某大学様 購買管理システム : VB6 → VB.NET移行',
+        descriptionEn: "Migrated a university's procurement system from VB6 to VB.NET",
     },
     {
         period: '2001〜2009',
         companyJa: '某SIer会社',
+        companyEn: 'Fulltime Software Engineer',
         descriptionJa: '正社員勤務',
+        descriptionEn: 'Fulltime staff at SIer',
         detailsJa: [
         '某国鉄道会社様 新幹線運行管理システムの設計・開発(VC#、.NET WinForm)',
         '某鉄道会社様 運行管理システム構築(VC#、.NET WinForm、XML/Web Service)',

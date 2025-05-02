@@ -16,10 +16,12 @@ export const ExperienceSection = () => {
         <ul className="current-project-tech-list">
           {experiences.map((experience, index) => (
             <li key={index} className="current-project-title">
-              <div>
-                {experience.period}:{state.language === 'ja' ? experience.companyJa : experience.companyEn}
-                                    {state.language === 'ja' ? experience.descriptionJa : experience.descriptionEn}
-              </div>
+              <p>
+                {experience.period}:
+              </p>
+              <p>
+                {state.language === 'ja' ? experience.companyJa : experience.companyEn}</p>
+                <p>{state.language === 'ja' ? experience.descriptionJa : experience.descriptionEn}</p>
               {experience.detailsJa && (
                 <ul className="current-project-techapplied">
                   {experience.detailsJa.map((detail, i) => (
