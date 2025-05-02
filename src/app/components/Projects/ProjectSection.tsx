@@ -4,7 +4,7 @@ import { projects } from "../messages/Messages";
 import "../Profile/ProfileSection.css";
 
 export const ProjectSection = () => {
-  const { state, dispatch } = useLanguage();
+  const { state } = useLanguage();
   return (
     <div className="current-project">
         <div className="current-project-highlight-title">

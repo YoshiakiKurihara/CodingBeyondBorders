@@ -4,7 +4,7 @@ import { skillCategories } from "../messages/Messages";
 import "../Profile/ProfileSection.css";
 
 export const SkillsSection = () => {
-    const { state, dispatch } = useLanguage();
+    const { state } = useLanguage();
 
     return (
     <div className="current-project">
@@ -17,9 +17,9 @@ export const SkillsSection = () => {
                     <li key={index} className="current-project-title">
                         {state.language === 'ja' ? skill.titleJp : skill.titleEn}
                         <ul className="current-project-techapplied">
-                            <li>
-                                {skill.items.join(", ")}
-                            </li>
+                        {skill.items.map((item, i) => (
+                                    <li key={i}>・{item}</li>
+                        ))}
                         </ul>
                     </li>
                 ))}

@@ -5,12 +5,12 @@ import "../Profile/ProfileSection.css";
 
 
 export const ExperienceSection = () => {
-  const { state, dispatch } = useLanguage();
+  const { state } = useLanguage();
 
   return (
     <div className="current-project">
       <div className="current-project-highlight-title">
-        職務経歴
+      {state.language === 'ja' ? "職務経歴" : "Work Experience"}
       </div>
       <div>
         <ul className="current-project-tech-list">

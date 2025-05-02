@@ -6,12 +6,12 @@ import { Credential } from "../messages/Messages";
 import "./ProfileSection.css";
 
 export const ProfileSection = () => {
-    const { state, dispatch } = useLanguage();
+    const { state } = useLanguage();
 
     return (
     <div className="profile">
         <div className="profile-picture">
-            <Image src="/images/profile_picture.png" alt="Profile picture" height={200} // 高さは固定
+            <Image src="/images/profile_picture.png" alt="Profile picture" height={200}
                     width={1}    // ダミーの幅（style で override）
                     style={{ width: "auto", height: "200px" }}
                     sizes="(max-width: 600px) 100vw, auto"/>
