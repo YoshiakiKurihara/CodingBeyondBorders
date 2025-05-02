@@ -29,3 +29,146 @@ export const MessageText = {
     ARTICLE_JP : '記事', 
     ARTICLE_EN : 'Article',
 }
+
+export type SubMenuItem = {
+    labelJp: string;
+    labelEn: string;
+    path: string;
+};
+
+export type MenuItemType = {
+    labelJp: string;
+    labelEn: string;
+    children?: SubMenuItem[];
+};
+
+export const menuItems: MenuItemType[] = [
+    { labelJp: 'ホーム', labelEn: 'Home', children: [{ labelJp: 'ホーム', labelEn: 'Home', path: '/' }] },
+    { labelJp: '経験', labelEn: 'Experience',   children: [{ labelJp: 'Python', labelEn: 'Python', path: '/Experience/Python' },
+                                                        { labelJp: 'Next.js', labelEn: 'Next.js', path: '/Experience/NextJs' },
+                                                        { labelJp: 'React Native', labelEn: 'React Native', path: '/Experience/ReactNative' },
+                                                        { labelJp: 'React/Tauri デスクトップ', labelEn: 'React/Tauri Desktop App', path: '/Experience/ReactTauri' },
+                                                        { labelJp: 'MS.NET', labelEn: 'MS.NET', path: '/Experience/dotNet' }]},
+    { labelJp: 'ポートフォリオ', labelEn: 'Portfolio', children: [
+        { labelJp: 'Webサイト常時監視アプリケーション@Python', labelEn: 'Real-time Web Page Monitoring App@Python', path: '/Portfolio/Python' },
+//        { label: 'Real-time Web Page Monitoring App@Python', path: '/Portfolio/Python' },
+        { labelJp: '本ポートフォリオWebサイト@Next.js', labelEn: 'This Portfolio Web App@Next.js', path: '/Portfolio/NextJs' },
+        { labelJp: 'エアライン モバイルアプリ@React Native', labelEn: 'Airline Mobile App@React Native', path: '/Portfolio/ReactNative' },
+        { labelJp: 'パイロットログブック デスクトップアプリ@React/Tauri', labelEn: 'Pilot Logbook Desktop App@React/Tauri', path: '/Portfolio/ReactTauri' },
+        { labelJp: 'MS .NET', labelEn: 'MS.NET', path: '/Portfolio/dotNet' }] },
+    { labelJp: 'Mr.GPTとの議論議事録', labelEn: 'Discussion Minutes', children: [
+        { labelJp: 'Mr.GPTとNext.jsについて議論', labelEn: 'Regarding Next.js with Mr.GPT', path: '/Minutes/NextJs' },
+        { labelJp: 'Mr.GPTとPythonについて議論', labelEn: 'Regarding Python with Mr.GPT', path: '/Minutes/Python' },
+        { labelJp: 'Mr.GPTとReact/Tauri Desktopについて議論', labelEn: 'Regarding React/Tauri Desktop App with Mr.GPT', path: '/Minutes/ReactTauri' },
+        { labelJp: 'Mr.GPTとReact Nativeについて議論', labelEn: 'Regarding React Native with Mr.GPT', path: '/Minutes/ReactNative' },
+        { labelJp: 'Mr.GPTとMS.NETについて議論', labelEn: 'Regarding MS.NET with Mr.GPT', path: '/Minutes/dotNet' }] },
+    { labelJp: 'お問い合わせ', labelEn: 'Contact', children: [{ labelJp: 'お問い合わせ', labelEn: 'Contact Form', path: '/Contact' }] }
+];
+
+export const Credential = {
+    nameJa : "栗原 義彰",
+    nameEn : "Yoshi Kurihara",
+    titleJa : "フルスタック エンジニア",
+    titleEn : "Fullstack Engineer",
+    line1Ja : "国境を越えてあなたのアイデア、カタチにするお手伝いを。",
+    line1En : "Helping bring your ideas to life — beyond borders.",
+    line2Ja : "フリーランス ソフトウェア開発者、メルボルン拠点",
+    line2En : "Freelance Software Engineer based in Melbourne, VIC",
+}
+
+
+export interface Project {
+    titleJa: string;
+    titleEn: string;
+    description: string;
+    technologies: string;
+}
+
+export const projects: Project[] = [
+{
+    titleJa: 'Coding Beyond Borders ... / 本サイトです',
+    titleEn: 'Coding Beyond Borders ... / this portfolio website',
+    description: '',
+    technologies: 'Next.Js'
+},
+{
+    titleJa: '翻訳業務委託システム常時監視システム',
+    titleEn: 'Interpretor Service Despatch site Real-time Monitoring Application',
+    description: '',
+    technologies: 'Python / Selenium'
+},
+{
+    titleJa: 'パイロットログブック デスクトップアプリケーション',
+    titleEn: 'Pilot Logbook Desktop Application',
+    description: '',
+    technologies: 'React/Tauri, Supabase'
+},
+{
+    titleJa: 'バーチャルエアラインモバイルアプリケーション',
+    titleEn: 'Airline Mobile Application',
+    description: '',
+    technologies: 'React Native'
+}
+];
+
+interface Experience {
+    period: string;
+    companyJa: string;
+    companyEn?: string;
+    descriptionJa?: string;
+    descriptionEn?: string;
+    detailsJa?: string[];
+    detailsEn?: string[];
+}
+
+export const experiences: Experience[] = [
+    {
+        period: '2023〜',
+        companyJa: 'フリーランス',
+        companyEn: 'Freelance Fullstack Engineer',
+        descriptionJa: 'オーストラリア メルボルンでフリーランス活動中'
+    },
+    {
+        period: '2011〜2011',
+        companyJa: '某人財派遣会社',
+        descriptionJa: '某大学様 購買管理システム : VB6 → VB.NET移行'
+    },
+    {
+        period: '2001〜2009',
+        companyJa: '某SIer会社',
+        descriptionJa: '正社員勤務',
+        detailsJa: [
+        '某国鉄道会社様 新幹線運行管理システムの設計・開発(VC#、.NET WinForm)',
+        '某鉄道会社様 運行管理システム構築(VC#、.NET WinForm、XML/Web Service)',
+        '某鉄道会社様 運行管理システム構築(VB.NET、.NET WinForm、Oracle)',
+        '某自動車会社様 システムコンサルティング(Microsoft.NET技術導入支援)',
+        '某百貨店社様 お中元システム構築(Java、Oracle)',
+        '社内にAgile開発を導入するために、レグレッションテストを標準化の為の自動化ツールの開発',
+        'MS ASP.NET / WinFormsアプリケーションフレームワークライブラリの開発'
+        ]
+    }
+];
+
+export interface SkillCategory {
+    titleJp: string;
+    titleEn: string;
+    items: string[];
+}
+
+export const skillCategories: SkillCategory[] = [
+{
+    titleJp: 'フロントエンド',
+    titleEn: 'Frontend',
+    items: ['React', 'Next.js', 'React Native', 'React/Tauri Desktop']
+},
+{
+    titleJp: 'バックエンド',
+    titleEn: 'Backend',
+    items: ['VC#', 'VB.NET', 'Java', 'Python(Selenium, Pandas)', 'TypeScript', 'JavaScript']
+},
+{
+    titleJp: 'データベース',
+    titleEn: 'DataBase',
+    items: ['MS SQL Server', 'Oracle', 'MySQL', 'Supabase', 'Node']
+}
+];

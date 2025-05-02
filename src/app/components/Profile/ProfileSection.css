@@ -1,0 +1,103 @@
+.main-about{
+    display: flex;
+    flex-direction: column;
+    width: 100%;         /* 画面に合わせて縮む */
+    max-width: 600px;    /* 最大幅は600pxに制限 */
+    margin: 0 auto;      /* 中央寄せ（オプション） */
+    /* background: #9df195; */
+    box-sizing: border-box;
+}
+
+.profile, .current-project {
+    width: 100%;         /* 画面に合わせて縮む */
+    max-width: 600px;    /* 最大幅は600pxに制限 */
+    padding: 10px;
+    box-sizing: border-box; /* パディングによるズレ防止 */
+    /* background: #f1e895; or #d9eaff など各自調整 */
+}
+
+.profile {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    /* background: #f1e895; */
+}
+
+.profile-picture
+{
+    width: 150px;
+    /* background: #9df195; */
+}
+
+.profile-picture img
+{
+    width: 100%;
+    height: 100%;
+    /* background: #a395f1; */
+}
+
+.profile-description {
+    display: flex;
+    flex-direction: column; 
+    align-items: left;
+    margin-left: 10px;
+    padding: 10px;
+    /* background: #f195e2; */
+}
+
+.profile-description-nametitle
+{
+    padding: 10px;
+    font-size: small;
+    font-weight: bold;
+    line-height: 1.0;
+    /* background: #f195a4; */
+}
+
+.profile-description-text {
+    padding: 10px;
+    font-size: small;
+    line-height: 1.2;
+    /* background: #f1a095; */
+}
+
+.current-project {
+    margin: 0 auto;
+    padding: 10px;
+    /*background: #d9eaff;  任意：背景色で見やすくする */
+}
+
+.current-project-highlight-title {
+    font-size: medium;
+    font-weight: bold; /* 太字を解除 */
+    /*background: #d9eaff;  任意：背景色で見やすくする */
+}
+
+.current-project-tech-list{
+    padding: 5px;
+    margin: 5px;
+    background: #d9eaff;
+}
+
+.current-project-title{
+    font-size: medium;
+    font-weight: bold; /* 太字を解除 */
+}
+
+.current-project-techapplied{
+    font-size: small;
+    font-weight: normal; /* 太字を解除 */
+}
+
+@media (max-width: 500px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-description {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+}

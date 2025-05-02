@@ -1,69 +1,30 @@
-import { css } from '../../../../styled-system/css';
-
-interface SkillCategory {
-  title: string;
-  items: string[];
-}
-
-const skillCategories: SkillCategory[] = [
-  {
-    title: 'フロントエンド',
-    items: ['React', 'Next.js', 'React Native', 'React/Tauri Desktop']
-  },
-  {
-    title: 'バックエンド',
-    items: ['VC#', 'VB.NET', 'Java', 'Python(Selenium, Pandas)', 'TypeScript', 'JavaScript']
-  },
-  {
-    title: 'データベース',
-    items: ['MS SQL Server', 'Oracle', 'MySQL', 'Supabase', 'Node']
-  }
-];
+'use client';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { skillCategories } from "../messages/Messages";
+import "../Profile/ProfileSection.css";
 
 export const SkillsSection = () => {
-  return (
-    <div className={css({ marginTop: 'spacing.6' })}>
-      <h2 className={css({
-        fontWeight: 'bold',
-        fontSize: 'fontSizes.xl',
-        color: 'text.primary',
-        marginBottom: 'spacing.4'
-      })}>
-        技術スキル
-      </h2>
-      <ul className={css({
-        listStyleType: 'disc',
-        paddingLeft: 'spacing.5',
-        color: 'text.secondary',
-        '& > li': {
-          marginBottom: 'spacing.4'
-        }
-      })}>
-        {skillCategories.map((category, index) => (
-          <li key={index}>
-            <span className={css({
-              fontWeight: 'semibold',
-              color: 'text.primary'
-            })}>
-              {category.title}:
-            </span>
-            <ul className={css({
-              listStyleType: 'disc',
-              paddingLeft: 'spacing.5',
-              marginTop: 'spacing.2'
-            })}>
-              {category.items.map((skill, skillIndex) => (
-                <li key={skillIndex} className={css({
-                  color: 'text.secondary',
-                  marginBottom: 'spacing.1'
-                })}>
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    const { state, dispatch } = useLanguage();
+
+    return (
+    <div className="current-project">
+            <div className="current-project-highlight-title">
+            {state.language === 'ja' ? "技術スキル" : "Tech Skill"}
+            </div>
+            <div className="current-project-item">
+                <ul className="current-project-tech-list">
+                {skillCategories.map((skill, index) => (
+                    <li key={index} className="current-project-title">
+                        {state.language === 'ja' ? skill.titleJp : skill.titleEn}
+                        <ul className="current-project-techapplied">
+                            <li>
+                                {skill.items.join(", ")}
+                            </li>
+                        </ul>
+                    </li>
+                ))}
+                </ul>
+            </div>
+        </div>
+    );
 }; 

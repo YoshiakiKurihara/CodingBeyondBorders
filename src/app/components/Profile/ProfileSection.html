@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ProfileSection.css">
+</head>
+<body>
+    <div class="main-about">
+        <div class="profile">
+            <div class="profile-picture">
+                <img src="../../../../public/images/profile_picture.png" alt="Profile picture"/>
+            </div>
+            + <div class="profile-description">
+                <div class="profile-description-nametitle">
+                    <p>栗原 義彰 (Yoshi Kurihara)</p>
+                    <p>フルスタック エンジニア</p>
+                </div>
+                <div class="profile-description-text">
+                    <p>国境を越えてあなたのアイデア、カタチにするお手伝いを。</p>
+                    <p>C#/.NET に強いフリーランス開発者、メルボルン拠点</p>
+                </div>
+                <div >
+                    <a href="https://www.linkedin.com/in/yoshiakikurihara/" >
+                        <img src="../../../../public/images/LI-In-Bug.png" style="width:50px;height:auto;" alt="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/YoshiakiKurihara" >
+                        <img src="../../../../public/images/github-mark-white.png" style="width:50px;height:auto;" alt="GitHub" />
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="current-project">
+            <div class="current-project-highlight-title">
+                Current Project Highlights
+            </div>
+            <div key={index} className="current-project-item">
+                <ol className="current-project-tech-list">
+                    <li className="current-project-title">
+                        Coding Beyond Borders ...(this portfolio website)
+                        <ul>
+                            <li key={i} >Next.Js</li>
+                        </ul>
+                    </li>
+                    <li className="current-project-title">
+                        翻訳業務委託システム常時監視システム
+                        <ul>
+                            <!-- {project.technologies.map((tech, i) => ( -->
+                            <li key={i}>Python / Selenium</li>
+                            <!-- ))} -->
+                        </ul>
+                    </li>
+                    <li className="current-project-title">
+                        パイロットログブック デスクトップアプリケーション
+                        <ul>
+                            <!-- {project.technologies.map((tech, i) => ( -->
+                            <li key={i}>React/Tauri, Supabase</li>
+                            <!-- ))} -->
+                        </ul>
+                    </li>
+                    <li className="current-project-title">
+                        バーチャルエアラインモバイルアプリケーション
+                        <ul>
+                            <!-- {project.technologies.map((tech, i) => ( -->
+                            <li key={i}>React Native</li>
+                            <!-- ))} -->
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="current-project">
+            <div class="current-project-highlight-title">
+                職務経歴
+            </div>
+            <div key={index} className="current-project-item">
+                <ul className="current-project-tech-list">
+                    <li className="current-project-title">
+                        2024〜現在：フリーランス オーストラリア メルボルンでフリーランス活動中
+                    </li>
+                    <li className="current-project-title">
+                        2011〜2011：某人財派遣会社 某大学様 購買管理システム : VB6 → VB.NET移行
+                    </li>
+                    <li className="current-project-title">
+                        2001〜2009：某SIer会社 正社員勤務
+                        <ol>
+                            <li>某国鉄道会社様 新幹線運行管理システムの設計・開発(VC#、.NET WinForm)</li>
+                            <li>某鉄道会社様 運行管理システム構築(VC#、.NET WinForm、XML/Web Service)</li>
+                            <li>某鉄道会社様 運行管理システム構築(VB.NET、.NET WinForm、Oracle)</li>
+                            <li>某自動車会社様 システムコンサルティング(Microsoft.NET技術導入支援)</li>
+                            <li>某百貨店社様 お中元システム構築(Java、Oracle)</li>
+                            <li>社内にAgile開発を導入するために、レグレッションテストを標準化の為の自動化ツールの開発</li>
+                            <li>社内開発方式標準化の為のMS ASP.NET / WinFormsアプリケーションフレームワークライブラリ/標準開発方式の開発</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="current-project">
+            <div class="current-project-highlight-title">
+                技術スキル
+            </div>
+            <div key={index} className="current-project-item">
+                <ul className="current-project-tech-list">
+                    <li className="current-project-title">
+                        フロントエンド
+                        <ul>
+                            <!-- {project.technologies.map((tech, i) => ( -->
+                            <li key={i}>Next.js, React Native, React/Tauri Desktop</li>
+                            <!-- ))} -->
+                        </ul>
+                    </li>
+                    <li className="current-project-title">
+                        バックエンド
+                        <ul>
+                            <!-- {project.technologies.map((tech, i) => ( -->
+                            <li key={i}>
+                                TypeScript, JavaScript, Rust, VC#, VB.NET, Java, Python(Selenium, Pandas)
+                            </li>
+                            <!-- ))} -->
+                        </ul>
+                    </li>
+                    <li className="current-project-title">
+                        データベース
+                        <ul>
+                        <!-- {project.technologies.map((tech, i) => ( -->
+                            <li key={i}>
+                                MS SQL Server, Oracle, MySQL, Supabase, Node
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

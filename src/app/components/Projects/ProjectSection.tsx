@@ -1,75 +1,30 @@
-import { css } from '../../../../styled-system/css';
-
-interface Project {
-  title: string;
-  description: string;
-  technologies: string;
-}
-
-const projects: Project[] = [
-  {
-    title: 'Coding Beyond Borders ...(this portfolio website)',
-    description: '',
-    technologies: 'Next.Js'
-  },
-  {
-    title: '翻訳業務委託システム常時監視システム / interpreter Service Despatch site Real-time Monitoring Application',
-    description: '',
-    technologies: 'Python / Selenium'
-  },
-  {
-    title: 'パイロットログブック デスクトップアプリケーション / Pilot Logbook Desktop Application',
-    description: '',
-    technologies: 'React/Tauri, Supabase'
-  },
-  {
-    title: 'バーチャルエアラインモバイルアプリケーション / Airline Mobile Application',
-    description: '',
-    technologies: 'React Native'
-  }
-];
+'use client';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { projects } from "../messages/Messages";
+import "../Profile/ProfileSection.css";
 
 export const ProjectSection = () => {
+  const { state, dispatch } = useLanguage();
   return (
-    <div className={css({ marginTop: 'spacing.12' })}>
-      <h2 className={css({ 
-        fontWeight: 'bold',
-        fontSize: 'fontSizes.xl',
-        color: 'text.primary',
-        marginBottom: 'spacing.6'
-      })}>
-        Current Project Highlights
-      </h2>
-      <div className={css({
-        display: 'grid',
-        gridTemplateColumns: { base: '1fr', md: 'repeat(2, 1fr)' },
-        gap: 'spacing.6'
-      })}>
-        {projects.map((project, index) => (
-          <div key={index} className={css({
-            padding: 'spacing.4',
-            borderRadius: 'md',
-            backgroundColor: 'background',
-            boxShadow: 'sm'
-          })}>
-            <h3 className={css({
-              fontWeight: 'semibold',
-              fontSize: 'fontSizes.lg',
-              color: 'text.primary',
-              marginBottom: 'spacing.2'
-            })}>
-              {project.title}
-            </h3>
-            <p className={css({
-              fontSize: 'fontSizes.xs',
-              fontWeight: 'bold',
-              color: 'text.secondary'
-            })}>
-              {project.technologies}
-            </p>
-          </div>
-        ))}
-      </div>
+    <div className="current-project">
+        <div className="current-project-highlight-title">
+            Current Project Highlights
+        </div>
+        <div>
+            <ol className="current-project-tech-list">
+              {projects.map((project, index) => (
+                <li key={index} className="current-project-title">
+                    {state.language === 'ja' ? project.titleJa : project.titleEn}
+                    <ul>
+                        <li key={index} className="current-project-techapplied">
+                          ({project.technologies})
+                        </li>
+                    </ul>
+                </li>
+              ))}
+            </ol>
+        </div>
     </div>
+    
   );
 }; 

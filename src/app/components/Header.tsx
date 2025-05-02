@@ -12,42 +12,7 @@ import Button from '@mui/material/Button';
 import Image from 'next/image'
 import { css } from   '../../../styled-system/css';
 import { useLanguage } from '../contexts/LanguageContext';
-import { MessageText } from './messages/Messages';
-
-type SubMenuItem = {
-    labelJp: string;
-    labelEn: string;
-    path: string;
-};
-
-type MenuItemType = {
-    labelJp: string;
-    labelEn: string;
-    children?: SubMenuItem[];
-};
-
-const menuItems: MenuItemType[] = [
-    { labelJp: 'ホーム', labelEn: 'Home', children: [{ labelJp: 'ホーム', labelEn: 'Home', path: '/' }] },
-    { labelJp: '経験', labelEn: 'Experience',   children: [{ labelJp: 'Python', labelEn: 'Python', path: '/Experience/Python' },
-                                                        { labelJp: 'Next.js', labelEn: 'Next.js', path: '/Experience/NextJs' },
-                                                        { labelJp: 'React Native', labelEn: 'React Native', path: '/Experience/ReactNative' },
-                                                        { labelJp: 'React/Tauri デスクトップ', labelEn: 'React/Tauri Desktop App', path: '/Experience/ReactTauri' },
-                                                        { labelJp: 'MS.NET', labelEn: 'MS.NET', path: '/Experience/dotNet' }]},
-    { labelJp: 'ポートフォリオ', labelEn: 'Portfolio', children: [
-        { labelJp: 'Webサイト常時監視アプリケーション@Python', labelEn: 'Real-time Web Page Monitoring App@Python', path: '/Portfolio/Python' },
-//        { label: 'Real-time Web Page Monitoring App@Python', path: '/Portfolio/Python' },
-        { labelJp: '本ポートフォリオWebサイト@Next.js', labelEn: 'This Portfolio Web App@Next.js', path: '/Portfolio/NextJs' },
-        { labelJp: 'エアライン モバイルアプリ@React Native', labelEn: 'Airline Mobile App@React Native', path: '/Portfolio/ReactNative' },
-        { labelJp: 'パイロットログブック デスクトップアプリ@React/Tauri', labelEn: 'Pilot Logbook Desktop App@React/Tauri', path: '/Portfolio/ReactTauri' },
-        { labelJp: 'MS .NET', labelEn: 'MS.NET', path: '/Portfolio/dotNet' }] },
-    { labelJp: 'Mr.GPTとの議論議事録', labelEn: 'Discussion Minutes', children: [
-        { labelJp: 'Mr.GPTとNext.jsについて議論', labelEn: 'Regarding Next.js with Mr.GPT', path: '/Minutes/NextJs' },
-        { labelJp: 'Mr.GPTとPythonについて議論', labelEn: 'Regarding Python with Mr.GPT', path: '/Minutes/Python' },
-        { labelJp: 'Mr.GPTとReact/Tauri Desktopについて議論', labelEn: 'Regarding React/Tauri Desktop App with Mr.GPT', path: '/Minutes/ReactTauri' },
-        { labelJp: 'Mr.GPTとReact Nativeについて議論', labelEn: 'Regarding React Native with Mr.GPT', path: '/Minutes/ReactNative' },
-        { labelJp: 'Mr.GPTとMS.NETについて議論', labelEn: 'Regarding MS.NET with Mr.GPT', path: '/Minutes/dotNet' }] },
-    { labelJp: 'お問い合わせ', labelEn: 'Contact', children: [{ labelJp: 'お問い合わせ', labelEn: 'Contact Form', path: '/Contact' }] }
-];
+import { MessageText, menuItems, SubMenuItem } from './messages/Messages';
 
 const Header = () => {
     const { state, dispatch } = useLanguage();
