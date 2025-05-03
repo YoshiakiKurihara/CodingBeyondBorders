@@ -126,7 +126,8 @@ export const experiences: Experience[] = [
         period: '2023〜',
         companyJa: 'フリーランス',
         companyEn: 'Freelance Fullstack Engineer',
-        descriptionJa: 'オーストラリア メルボルンでフリーランス活動中'
+        descriptionJa: 'オーストラリア メルボルンでフリーランス活動中',
+        descriptionEn: 'Freelance developer based in Melbourne, Australia.',
     },
     {
         period: '2011〜2011',
@@ -149,7 +150,16 @@ export const experiences: Experience[] = [
         '某百貨店社様 お中元システム構築(Java、Oracle)',
         '社内にAgile開発を導入するために、レグレッションテストを標準化の為の自動化ツールの開発',
         'MS ASP.NET / WinFormsアプリケーションフレームワークライブラリの開発'
-        ]
+        ],
+        detailsEn:[
+            "Designed and developed a Shinkansen (bullet train) operation management system for a major national railway company (VC#, .NET WinForms)",
+            "Developed an operation management system for a railway company using VC#, .NET WinForms, and XML/Web Services.",
+            "Built an operation management system for a railway company using VB.NET, .NET WinForms, and Oracle.",
+            "Provided system consulting for a major automotive company, supporting the adoption of Microsoft .NET technologies.",
+            "Developed a seasonal gift order management system (Ochugen) for a major department store using Java and Oracle.",
+            "Developed an automated tool to standardize regression testing in order to introduce Agile development practices within the company.",
+            "Developed application framework libraries for MS ASP.NET and WinForms.",
+        ],
     }
 ];
 

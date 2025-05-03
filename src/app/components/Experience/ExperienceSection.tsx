@@ -22,13 +22,14 @@ export const ExperienceSection = () => {
               <p>
                 {state.language === 'ja' ? experience.companyJa : experience.companyEn}</p>
                 <p>{state.language === 'ja' ? experience.descriptionJa : experience.descriptionEn}</p>
-              {experience.detailsJa && (
                 <ul className="current-project-techapplied">
-                  {experience.detailsJa.map((detail, i) => (
+                  {(state?.language === 'ja'
+                    ? experience.detailsJa || []
+                    : experience.detailsEn || []
+                  ).map((detail, i) => (
                     <li key={i}>・{detail}</li>
                   ))}
                 </ul>
-              )}
             </li>
           ))}
         </ul>
