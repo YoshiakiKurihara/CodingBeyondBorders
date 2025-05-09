@@ -1,7 +1,7 @@
 import { getBlogDetails } from '@/app/lib/notion-renderer'
 
 // ページコンポーネント
-export default async function Experience_Items_Python({ params }: { params: { id: string } }) {
+export default async function Portfolio_Items_Python({ params }: { params: { id: string } }) {
   return getBlogDetails(params.id);
 }
 

@@ -1,12 +1,10 @@
 import { ReactNode } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import Image from 'next/image';
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BlockObjectResponse, PageObjectResponse, RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
 import { notion, getPage, getBlocks, fetchBlockChildren } from '@/app/lib/notion-api'
 import { isFullPage } from '@notionhq/client'
-import { css } from   '../../../styled-system/css';
 
 // rich_textをマークアップ付きでレンダリングする関数
 export function renderRichText(richTexts: RichTextItemResponse[]): ReactNode[] {
@@ -43,11 +41,10 @@ interface BlogPost {
     date: string
 }
 
-export async function getBlogPosts(titleMessage: string, databaseId: string) {
+export async function getBlogPosts(databaseId: string): Promise<BlogPost[]> {
     const posts : BlogPost[] = await getBlogPostsInfo(databaseId)
 
-    return (
-        <>
+    {/* <>
         <h1>{titleMessage}</h1>
         <div className="prose mx-auto py-10">
         <ul>
@@ -56,17 +53,18 @@ export async function getBlogPosts(titleMessage: string, databaseId: string) {
         ) : (
             posts.map((post) => (
             <li key={post.id}>
-                <Link className={css({mt:5})} href={`./ReactTauri/${post.id}`}>
-                <div className={css({mt:5})}>{post.title}</div>
+                <Link className="mt-5" href={`./ReactTauri/${post.id}`}>
+                <div className="mt-5">{post.title}</div>
                 </Link>
-                <div className="text-sm text-gray-500 mb:10px">{post.date}</div>
+                <div className="text-sm text-gray-500 mb-2.5">{post.date}</div>
             </li>
             ))
         )}
         </ul>
-    </div>
-    </>
-    )
+    </div> 
+    </>*/}
+
+    return (posts)
 }
   // Notionからブログ記事リストを取得
 async function getBlogPostsInfo(databaseId: string): Promise<BlogPost[]> {

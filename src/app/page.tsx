@@ -3,26 +3,12 @@ import { ProfileSection } from './components/Profile/ProfileSection';
 import { ProjectSection } from './components/Projects/ProjectSection';
 import { ExperienceSection } from './components/Experience/ExperienceSection';
 import { SkillsSection } from './components/Skills/SkillsSection';
-import { css } from '../../styled-system/css';
 
 export default function Home() {
   return (
-    <div className={css({
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: { base: 'spacing.4', md: 'spacing.8' }
-    })}>
+    <div className="flex flex-col items-center max-w-[1200px] mx-auto p-4 md:p-8">
       <ProfileSection />
-      <div className={css({
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        marginTop: 'spacing.12',
-        padding: { base: 'spacing.4', md: 'spacing.8' }
-      })}>
+      <div className="flex flex-col w-full mt-12 p-4 md:p-8">
         <ProjectSection />
         <ExperienceSection />
         <SkillsSection />

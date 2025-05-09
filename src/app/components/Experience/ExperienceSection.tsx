@@ -1,35 +1,36 @@
 'use client';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { experiences } from "../messages/Messages";
-import "../Profile/ProfileSection.css";
-
 
 export const ExperienceSection = () => {
   const { state } = useLanguage();
 
   return (
-    <div className="current-project">
-      <div className="current-project-highlight-title">
-      {state.language === 'ja' ? "職務経歴" : "Work Experience"}
+    <div className="w-full max-w-[600px] mx-auto p-2.5 md:p-4">
+      <div className="text-base md:text-lg font-bold mb-2">
+        {state.language === 'ja' ? "職務経歴" : "Work Experience"}
       </div>
       <div>
-        <ul className="current-project-tech-list">
+        <ul className="p-2 md:p-4 m-1.5 bg-[#d9eaff] rounded-lg">
           {experiences.map((experience, index) => (
-            <li key={index} className="current-project-title">
-              <p>
+            <li key={index} className="text-base md:text-lg font-bold mb-4">
+              <p className="text-primary-600">
                 {experience.period}:
               </p>
-              <p>
-                {state.language === 'ja' ? experience.companyJa : experience.companyEn}</p>
-                <p>{state.language === 'ja' ? experience.descriptionJa : experience.descriptionEn}</p>
-                <ul className="current-project-techapplied">
-                  {(state?.language === 'ja'
-                    ? experience.detailsJa || []
-                    : experience.detailsEn || []
-                  ).map((detail, i) => (
-                    <li key={i}>・{detail}</li>
-                  ))}
-                </ul>
+              <p className="mb-1">
+                {state.language === 'ja' ? experience.companyJa : experience.companyEn}
+              </p>
+              <p className="mb-2 text-sm md:text-base">
+                {state.language === 'ja' ? experience.descriptionJa : experience.descriptionEn}
+              </p>
+              <ul className="text-sm md:text-base font-normal ml-4">
+                {(state?.language === 'ja'
+                  ? experience.detailsJa || []
+                  : experience.detailsEn || []
+                ).map((detail, i) => (
+                  <li key={i} className="mb-1">・{detail}</li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>

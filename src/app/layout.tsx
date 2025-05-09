@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { css } from   '../../styled-system/css';
 import Header from './components/Header'
 import LeftSidebarWrapper from './components/LeftSidebarWrapper'
 import RightSidebar from './components/RightSidebar'
@@ -23,40 +22,36 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className={`${inter.variable}`}>
-        <div className={css({minHeight: '100vh', display: 'flex', flexDirection: 'column', bg: 'slate.100',})}>
+        <div className="min-h-screen flex flex-col bg-slate-100">
           <LanguageProvider>
             {/* Header */}
-            <header className={css({bg: 'slate.800', color: 'white', p: 3, fontSize: 'xl',})}>
+            <header className="bg-slate-800 text-white p-3 text-xl">
               <Header />
             </header>
 
             {/* Main area */} 
-            {/* サイドバーがはみ出ないように */}
-            <div className={css({flex: '1', display: 'flex', flexDirection: 'row', overflow: 'hidden', })}>
+            <div className="flex-1 flex flex-row overflow-hidden">
               {/* Left Sidebar */}
-              {/* モバイル対応を考えて非表示スタートでもOK */}
-              <aside className={css({width: '250px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
+              <aside className="w-[250px] bg-slate-600 text-white p-4 hidden md:block">
                 <LeftSidebarWrapper />
               </aside>
               
               {/* Main Content */}
-              <main className={css({flex: '1', bg: 'slate.200', p: 4,})}>
+              <main className="flex-1 bg-slate-200 p-4">
                 {children}
               </main>
 
               {/* Right Sidebar */}
-              {/* 同じくモバイル対応 */}
-              <aside className={css({ width: '150px', bg: 'slate.600', color: 'white', p: 4, display: 'none', md: { display: 'block' },})}>
+              <aside className="w-[150px] bg-slate-600 text-white p-4 hidden md:block">
                 <RightSidebar />
               </aside>
             </div>
 
             {/* Footer */}
-            <footer className={css({ bg: 'slate.800', color: 'white', p: 2,})}>
+            <footer className="bg-slate-800 text-white p-2">
               <Footer />
             </footer>
           </LanguageProvider>

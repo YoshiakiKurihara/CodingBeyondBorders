@@ -10,7 +10,6 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 import Image from 'next/image'
-import { css } from   '../../../styled-system/css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { MessageText, menuItems, SubMenuItem } from './messages/Messages';
 
@@ -57,18 +56,17 @@ const Header = () => {
         handleCloseSubMenu();
     };
 
-
     return (
         <>
-            <div className={css({display: 'flex', flexDirection: 'row', bg: 'slate.800', color: 'white', p: 3, alignItems: 'center', flexWrap: 'wrap', })}>
-                <div className={css({ flex: 1, minWidth: '250px' })}>
-                    <p className={css({ fontSize: 'xl' })}>Coding Beyond Borders ...</p>
-                    <p className={css({ fontSize: 'xs' })}>
+            <div className="flex flex-row bg-slate-800 text-white p-3 items-center flex-wrap">
+                <div className="flex-1 min-w-[250px]">
+                    <p className="text-xl">Coding Beyond Borders ...</p>
+                    <p className="text-xs">
                     {state.language === 'ja' ? MessageText.PORTFOLIO_SUBTITLE_JP : MessageText.PORTFOLIO_SUBTITLE_EN}
                     </p>
                 </div>
             </div>
-            <div className={css({bg: 'slate.800', color: 'white', fontSize: 'xs',})}>
+            <div className="bg-slate-800 text-white text-xs">
                 <AppBar position="static" component="div" sx={{ backgroundColor: 'transparent', border: 'none', boxShadow: 'none', margin: '0', }}>
                     <Toolbar variant="dense" disableGutters sx={{ minHeight: '20px !important', height: '20px', padding: 0 }}>
                         {/* スマホ向けハンバーガー */}
@@ -134,7 +132,7 @@ const Header = () => {
 
                         {/* 言語切り替え：国旗アイコンを右端に配置 */}
                         <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto', pr: 1 }}>
-                            <span className={css({ fontSize: 'xs', mr: 2 })}> {state.language === 'ja' ? '[ JP 日本語 ]' : '[ GB English ]'}</span>
+                            <span className="text-xs mr-2"> {state.language === 'ja' ? '[ JP 日本語 ]' : '[ GB English ]'}</span>
                             <Image
                             src="/images/Flag_of_Japan.svg"
                             width={25}
